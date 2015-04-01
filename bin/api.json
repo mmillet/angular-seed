@@ -1,0 +1,27 @@
+{
+  "Default": [
+    {"url": "/HI", "mock":true, "desc":"这是一个测试API，输出的数据是动态数据", "res": {
+      "list|1-20": [{
+          "id|+1": 1
+        }]
+    }},
+    {"url": "/HELLO", "desc":"这是一个测试API，输出的数据是静态数据", "res": "Hi Baymax :D"}
+  ],
+  "USER": [
+    {"url": "/user", "mock":true, "desc":"这是一个测试API，获取所有用户", "res": {
+      "users|5-10": [{
+        "id": "@id",
+        "name": "@last",
+        "email": "@email",
+        "level|0-4": 0
+      }]
+    }},
+    {"url": "/user/:id", "mock":true, "desc":"这是一个测试API，获取单个用户", "res": {
+      "id": "@id",
+      "name": "@last"
+    }},
+    {"url": "/user/add/:name/:password", "desc":"这是一个测试API，添加一个用户", "res": {
+      "result": "添加成功，账号@name / 密码@password"
+    }}
+  ]
+}
