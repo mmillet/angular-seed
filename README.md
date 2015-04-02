@@ -25,20 +25,20 @@
 ##目录结构
 
     src
-     -css
-     -img
-     -js
-      -config   全局配置
-      -controllers   控制器
-      -directives   指令
-      -filters   过滤器
-      -services   服务
-     -vendor   框架、库和三方组件
-     main.js   项目启动入口
-     myApp.js   angular启动入口
-     templates.js   动态生成的模板文件
-    -partials   模板
-    index.html   入口页面
+      -css
+      -img
+      -js
+        -config   全局配置
+        -controllers   控制器
+        -directives   指令
+        -filters   过滤器
+        -services   服务
+        -vendor   框架、库和三方组件
+        main.js   项目启动入口
+        myApp.js   angular启动入口
+        templates.js   动态生成的模板文件
+      -partials   模板
+      index.html   入口页面
 
 
 ## @todo
