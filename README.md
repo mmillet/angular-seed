@@ -10,16 +10,17 @@ grunt watch //监听src/partials变化动态生成templates.js
 访问 http://ip[:port]/
 
 ##前端开发
-1.增加路由（src/js/config/route.js）
-2.增加控制器（src/js/controllers/）、服务[可选]（src/js/services/）和对应的模板（src/partials）
-3.myApp中添加你的控制器
-4.开始愉快的使用angular
+1. 增加路由（src/js/config/route.js）
+2. 增加控制器（src/js/controllers/）、服务[可选]（src/js/services/）和对应的模板（src/partials）
+3. myApp中添加你的控制器
+4. 开始愉快的使用angular
 
 ##异步数据调试
-1.在bin/api.json中增加一条后端数据，可使用[mock语法](http://mockjs.com/mock)。
-2.访问 http://127.0.0.1[:port]/~api 可看到当前项目的接口列表
+1. 在bin/api.json中增加一条后端数据，可使用[mock语法](http://mockjs.com/mock)。
+2. 访问 http://127.0.0.1[:port]/~api 可看到当前项目的接口列表
 
 ##目录结构
+    
 src
  -css
  -img
@@ -38,8 +39,8 @@ src
 
 
 ## @todo
-1.grunt打包，精简文件
-2.bower来管理各种三方库和插件
-3.整理less，精简css
-4.api管理，接口文档生成
-5.TDD
+1. grunt打包，精简文件
+2. bower来管理各种三方库和插件
+3. 整理less，精简css
+4. api管理，接口文档生成
+5. TDD
