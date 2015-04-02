@@ -20,7 +20,7 @@
 ##异步数据调试
 
 1. 在bin/api.json中增加一条后端数据，可使用[mock语法](http://mockjs.com/mock)。
-2. 访问'http://127.0.0.1[:port]/~api'可看到当前项目的接口列表
+2. 访问http://ip[:port]/~api 可看到当前项目的接口列表
 
 ##目录结构
 
