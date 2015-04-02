@@ -1,0 +1,7 @@
+<div class="pull-right">
+  <div class="text-right text-muted">
+    <small>共{{$parent.totalItems}}条记录，每页{{$parent.query.pageSize}}条</small>
+    <button type="button" class="btn btn-link btn-xs" ng-click="$parent.pageChanged()" title="刷新列表"><i class="glyphicon glyphicon-repeat text-primary"></i></button>
+  </div>
+  <pagination rotate="false"  max-size="15" boundary-links="true" ng-change="$parent.pageChanged()" total-items="$parent.totalItems" items-per-page="$parent.query.pageSize" ng-model="$parent.query.pageIndex" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+</div>

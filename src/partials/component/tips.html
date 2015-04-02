@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <h3 class="modal-title">{{data.title || '提示'}}</h3>
+</div>
+<div class="modal-body">
+  <p ng-if="data.type!='prompt'" ng-bind-html="data.msg || '提示信息'"></p>
+  <form name="prompt" ng-show="data.type=='prompt'">
+    <input autofocus type="text" class="form-control" ng-keyup="prompt.$valid && $event.keyCode==13 && ok()" ng-model="data.promptInput" placeholder="{{msg || '请填写'}}" required/>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-disabled="data.type=='prompt' && prompt.$invalid" ng-click="ok()">{{data.btnOkTitle||'确定'}}</button>
+  <button class="btn btn-default" ng-if="data.cancelBtn" ng-click="cancel()">{{data.btnCancelTitle||'取消'}}</button>
+</div>

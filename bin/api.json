@@ -9,7 +9,7 @@
   ],
   "USER": [
     {"url": "/user", "mock":true, "desc":"这是一个测试API，获取所有用户", "res": {
-      "users|5-10": [{
+      "users|1-3": [{
         "id": "@id",
         "name": "@last",
         "email": "@email",

@@ -1,0 +1,349 @@
+.navbar {
+  &.navbar-inverse {
+    background-color: #27303f;
+    border-color: #27303f;
+    .navbar-text {
+      color: #ebebed;
+      padding-left: 20px;
+    }
+  }
+}
+
+.sidebar {
+  .animation-duration(0.5s) !important;
+  width: 200px;
+  background-color: #27303f;
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #27303f;;
+  border-right: 1px solid #27303f;
+  .glyphicon-backward, .glyphicon-forward {
+    color: #ccc;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+    &:hover {
+      color: #999;
+    }
+  }
+  .fa {
+    min-width: 16px;
+    text-align: center;
+  }
+  &.mini {
+    width: 0;
+    padding: 20px 18px 20px 2px;
+    overflow-y:hidden;
+    li a {
+      height: 26px;
+      overflow: hidden;
+      padding: 3px 20px;
+    }
+    .badge-tips {
+      border-radius: 50%;
+      left: 8px;
+      padding: 0;
+      right: 0;
+      top: -28px;
+    }
+    .fa-angle-down {
+      display: none;
+    }
+    .nav {
+      ul.submenu {
+        a {
+          .glyphicon, .fa{
+            left:23px;
+            top: 5px;
+            font-size: 10px;
+          }
+          height: 20px;
+          line-height: 20px;
+        }
+        li {
+          &:before {
+            border: none;
+          }
+        }
+        &:before {
+          border: none;
+        }
+      }
+    }
+  }
+  .nav {
+    li.menu-toggle {
+      cursor: pointer;
+    }
+    .fa-angle-down {
+      position: absolute;
+      right: 6px;
+      top: 12px;
+      z-index: 1;
+      color: #fff;
+    }
+    .badge-tips {
+      right:25px;
+      top: 6px;
+    }
+    ul.submenu {
+      &.submenu-close {
+        display: none;
+      }
+      list-style: none;
+      padding: 0;
+      position: relative;
+      &:before {
+        content: "";
+        border-left: 1px dotted #999;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 26px;
+        z-index: 1;
+      }
+      li {
+        position: relative;
+        &:before {
+          content: "";
+          border-top: 1px dotted #999;
+          width: 4px;
+          height: 1px;
+          position: absolute;
+          left: 28px;
+          top: 14px;
+          width: 6px;
+        }
+        &.active {
+          a{
+            color: #428bca;
+          }
+          a:hover {
+            color: #428bca;
+            background-color: #171f2a;
+          }
+        }
+        a {
+          display: block;
+          padding-left: 56px;
+          height: 30px;
+          line-height: 30px;
+          color: #999;
+          &:hover {
+            text-decoration: none;
+            //color: #2a6496;
+            background-color: #171f2a;
+          }
+          .glyphicon, .fa {
+            position: absolute;
+            top: 9px;
+            left: 38px;
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* Sidebar navigation */
+  .nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+  }
+  .nav-sidebar > li > a {
+    color: #ebebed;
+    padding-right: 20px;
+    padding-left: 20px;
+    > span {
+      position: relative;
+      padding-right: 12px;
+    }
+    &:hover {
+      background-color: #171f2a;
+    }
+  }
+  .nav-sidebar > .active > a {
+    color: #428bca;
+  }
+  .nav-sidebar > .active > a:hover,
+  .nav-sidebar > .active > a:focus {
+    color: #428bca;
+    background-color: #171f2a;
+  }
+}
+
+.main {
+  padding: 20px;
+  position: absolute;
+  left: 200px;
+  right: 0;
+  top: 51px;
+  bottom: 0;
+  .transition(all 0.25s);
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  overflow-y: auto;
+  &.broad {
+    left: 20px;
+  }
+ .page-header {
+   margin-top: 0;
+ }
+}
+
+.modal-hg {
+  width: 1200px;
+}
+
+
+.faq-dialog {
+  position: relative;
+  font-size: 12px;
+  h3 {
+    margin: 0 0 4px;
+    font-size: 12px;
+  }
+  .myAnswerEditorWrap {
+    margin-top: 38px;
+  }
+  .web-default-checkbox {
+    position: absolute;
+    top: -29px;
+    right: 0;
+    input {
+      margin-top: 2px;
+    }
+  }
+  .nav-tabs {
+    position: absolute;
+    z-index: 888;
+    top: 0;
+    .disabled {
+      a {
+        color: #aaa;
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+
+.mini-multi-select {
+  display: inline-block;
+  .ms-choice {
+    border: none;
+    height: 16px;
+    line-height: 16px;
+    > div{
+      top: -3px;
+      height: 18px;
+    }
+  }
+  .ms-drop {
+    width: 132px;
+    z-index: 1003;
+    left: -2px;
+    margin-top: 2px;
+  }
+}
+
+.dialog-tree {
+  .angular-ui-tree-handle {
+    cursor: default;
+  }
+  .tree-item {
+    a {
+      max-width: 250px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: left;
+      height: 22px;
+    }
+    .item-edit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 12px;
+      height: 20px;
+      line-height: 20px;
+      min-width: 100px;
+      font-weight: normal;
+      padding: 0 6px;
+    }
+    .item-control {
+      display: none;
+      position: absolute;
+      white-space: nowrap;
+      right: 0;
+      top: 0;
+      a {
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+    &:hover {
+      .item-control {
+        display: block;
+      }
+    }
+  }
+}
+
+.modal-content {
+  .edui-modal-backdrop {
+    background-color: transparent;
+  }
+}
+
+.bootstrap-datetimepicker {
+  width: 320px;
+  height: 34px;
+  .col-md-4 {
+    > table {
+      position: absolute;
+      top: -34px;
+      left: -6px;
+    }
+  }
+}
+
+.tooltip-inner {
+  max-width: 9999px !important;
+}
+
+.tooltip-table {
+  td {
+    padding: 0 2px;
+  }
+}
+
+.dropdown .dropdown-menu {
+  min-width: 85px;
+  left: auto;
+  right: 0;
+  margin-top: 0;
+}
+
+.ui-select-toggle {
+  width: 100% !important;
+}
+
+.ui-select-match {
+  .ui-select-toggle {
+    .glyphicon-remove {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<ul class="row nav nav-tabs" role="tablist">
+  <li ng-if="hasPriv(item.title)" role="presentation" ng-repeat="item in subMenu" ng-class="{active: $state.includes(item.state)}">
+    <a ui-sref="{{item.state}}">{{item.title}}</a>
+    <span ng-if="taskTips[item.state]" class="badge badge-tips badge-tips-assign animated bounceIn">{{taskTips[item.state]}}</span>
+  </li>
+</ul>
+<div class="main-content" ui-view></div>

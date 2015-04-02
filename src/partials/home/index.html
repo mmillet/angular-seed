@@ -1,0 +1,223 @@
+<h1 class="content-title">首页</h1>
+<div class="row">
+  <div class="col-lg-12">
+    <p>下面是一些基本组件的用法，这里获取更多你想要的：<a href="http://angular-ui.github.io/" target="_blank">http://angular-ui.github.io/</a></p>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>组件</th>
+        <th>示例</th>
+        <th>参考</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>基本提示框：</td>
+        <td>
+          <button class="btn btn-default" ng-click="showTips('info')">Info</button>
+          <button class="btn btn-default" ng-click="showTips('error')">Error</button>
+          <button class="btn btn-default" ng-click="showTips('confirm')">Confirm</button>
+          <button class="btn btn-default" ng-click="showTips('prompt')">Prompt</button>
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>使用图标：</td>
+        <td>
+          <i class="fa fa-rocket" fly-me></i>
+          <i class="fa fa-fighter-jet" fly-me></i>
+          <i class="fa fa-space-shuttle" fly-me></i>
+          <i class="fa fa-spinner fa-spin"></i>
+          <i class="fa fa-circle-o-notch fa-spin"></i>
+          <i class="fa fa-refresh fa-spin"></i>
+          <i class="fa fa-cog fa-spin"></i>
+        </td>
+        <td>
+          <a href="http://v3.bootcss.com/components/#glyphicons" target="_blank">http://v3.bootcss.com/components/#glyphicons</a>
+          <br/>
+          <a href="http://fontawesome.io/icons/" target="_blank">http://fontawesome.io/icons/</a>
+        </td>
+      </tr>
+      <tr>
+        <td>消息提示框：</td>
+        <td><button class="btn btn-default" ng-click="showMes('Hi, I am Baymax!')">Say Hi</button></td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>加载中：</td>
+        <td><button class="btn btn-default" ng-click="loading()">loading</button></td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>对话框：</td>
+        <td>
+          <button class="btn btn-default" ng-click="showModal('hg')">超大</button>
+          <button class="btn btn-default" ng-click="showModal('lg')">大</button>
+          <button class="btn btn-default" ng-click="showModal('')">一般（默认）</button>
+          <button class="btn btn-default" ng-click="showModal('sm')">小</button>
+          <button class="btn btn-default" ng-click="showModal('md', true)">点击遮罩或按ESC不关闭</button>
+        </td>
+        <td>
+          <a href="http://angular-ui.github.io/bootstrap/#/modal" target="_blank">http://angular-ui.github.io/bootstrap/#/modal</a>
+        </td>
+      </tr>
+      <tr>
+        <td>泡泡提示信息：</td>
+        <td>
+          <button popover="乖，你真听话!" popover-trigger="mouseenter" class="btn btn-default ng-scope">鼠标移到我</button>
+          <button popover="乖，我知道你很听话了!" popover-trigger="click" popover-placement="right" class="btn btn-default ng-scope">鼠标点我</button>
+          <a href="#" tooltip-placement="top" tooltip="我是一个工具提示噢!"> 我是一个工具提示噢</a>
+        </td>
+        <td>
+          <a href="http://angular-ui.github.io/bootstrap/#/popover" target="_blank">http://angular-ui.github.io/bootstrap/#/popover</a>
+          <br/>
+          <a href="http://angular-ui.github.io/bootstrap/#/tooltip" target="_blank">http://angular-ui.github.io/bootstrap/#/tooltip</a>
+        </td>
+      </tr>
+      <tr>
+        <td>按钮组：</td>
+        <td>
+          <div class="btn-group">
+            <label class="btn" ng-class="{'btn-success':tmp.radioModel,'btn-default':!tmp.radioModel}" ng-model="tmp.radioModel" btn-radio="true">启用</label>
+            <label class="btn" ng-class="{'btn-danger':!tmp.radioModel,'btn-default':tmp.radioModel}" ng-model="tmp.radioModel" btn-radio="false">禁用</label>
+          </div>
+
+          <div class="btn-group btn-group-dropdown" dropdown>
+            <button type="button" class="btn btn-xs btn-default">
+                <span class="fa fa-files-o text-warning"></span>
+            </button>
+            <button type="button" class="btn btn-xs btn-default" title="添加">
+              <span class="glyphicon text-primary glyphicon-plus"></span>
+            </button>
+            <button type="button" class="btn btn-xs btn-default" title="重命名">
+              <span class="glyphicon text-primary glyphicon-edit"></span>
+            </button>
+            <button type="button" class="btn btn-xs btn-default dropdown-toggle">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a class="btn btn-link btn-xs"><span class="glyphicon glyphicon-remove text-danger"></span> 删除</a></li>
+              <li class="divider"></li>
+              <li><a class="btn btn-link btn-xs"><span class="glyphicon text-primary glyphicon-arrow-up"></span> 上移</a></li>
+              <li><a class="btn btn-link btn-xs"><span class="glyphicon text-primary glyphicon-arrow-down"></span> 下移</a></li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <a href="http://angular-ui.github.io/bootstrap/#/buttons" target="_blank">http://angular-ui.github.io/bootstrap/#/buttons</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>日期：</td>
+        <td>
+          <div class="input-group" style="width: 200px;">
+            <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="data.myDatetime" is-open="tmp.dateIsOpen"
+               datepicker-options="dateOptionsBootstrap"
+               show-button-bar="false"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+        </td>
+        <td>
+          <a href="http://angular-ui.github.io/bootstrap/#/datepicker" target="_blank">http://angular-ui.github.io/bootstrap/#/datepicker</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>下拉列表：</td>
+        <td>
+          <ui-select multiple ng-model="data.select1" theme="bootstrap" style="width: 200px; display: inline-block;">
+            <ui-select-match placeholder="多选列表，请选择...">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="color in data.colors | filter:$select.search">
+              <div ng-bind-html="color | highlight: $select.search"></div>
+            </ui-select-choices>
+          </ui-select>
+
+          <ui-select multiple tagging ng-model="data.select3" theme="bootstrap" style="width: 200px; display: inline-block;">
+            <ui-select-match placeholder="标签多选，请选择或填写...">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="color in data.colors | filter:$select.search">
+              <div ng-bind-html="color | highlight: $select.search"></div>
+            </ui-select-choices>
+          </ui-select>
+
+          <ui-select ng-model="data.select2" theme="bootstrap" style="width: 200px; display: inline-block;">
+            <ui-select-match allow-clear="true" placeholder="单选列表，请选择...">{{$select.selected}}</ui-select-match>
+            <ui-select-choices group-by="groupFn" repeat="color in data.colors | filter: $select.search">
+              <span ng-bind-html="color | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+        </td>
+        <td>
+          <a href="https://github.com/angular-ui/ui-select/" target="_blank">https://github.com/angular-ui/ui-select/</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>图表：</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4">
+              <canvas class="chart chart-line" data="data.chart1" labels="data.labels"
+                      legend="true" series="data.series" click="onClick"></canvas>
+            </div>
+            <div class="col-md-4">
+              <canvas legend="true" class="chart chart-pie" data="data.pieData" labels="data.pieLabels"></canvas>
+            </div>
+            <div class="col-md-4">
+              <canvas id="area" class="chart chart-radar" data="data.radarData" labels="data.radarLabels"></canvas>
+            </div>
+
+          </div>
+
+        </td>
+        <td>
+          <a target="_blank" href="https://github.com/jtblin/angular-chart.js">https://github.com/jtblin/angular-chart.js</a>
+          <br/>
+          <a target="_blank" href="http://www.chartjs.org/docs/#getting-started-include-chart.js">http://www.chartjs.org/docs/#getting-started-include-chart.js</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>表格：</td>
+        <td>
+          <table class="table table-hover table-condensed">
+            <thead><tr><th width="25%">编号</th><th width="25%">账号</th><th width="25%">邮箱</th><th width="25%">操作</th></tr></thead>
+            <tbody>
+            <tr ng-repeat="item in data.table.items">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>
+                <button type="button" class="btn btn-link btn-xs pull-left" title="编辑"><i class="glyphicon glyphicon-edit"></i> 编辑</button>
+                <button type="button" class="btn btn-link btn-xs pull-left" title="查看"><i class="fa fa-eye"></i> 查看</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="pull-right">
+            <div class="text-right text-muted">
+              <small>共{{data.table.total}}条记录，每页{{data.table.pageSize}}条</small>
+              <button type="button" class="btn btn-link btn-xs" ng-click="pageChanged()" title="刷新列表"><i class="glyphicon glyphicon-repeat text-primary"></i></button>
+            </div>
+            <pagination ng-change="pageChanged()" total-items="data.table.total" items-per-page="data.table.pageSize" ng-model="data.table.pageIndex"
+                        rotate="false" max-size="15" boundary-links="true" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+          </div>
+        </td>
+        <td>
+          <a href="http://angular-ui.github.io/bootstrap/#/pagination" target="_blank">http://angular-ui.github.io/bootstrap/#/pagination</a>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

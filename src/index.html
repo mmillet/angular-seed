@@ -1,1 +1,90 @@
-123
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular Seed</title>
+  <!--(if target dist)>
+  <link rel="stylesheet" href="js/vendor/umeditor/themes/default/css/umeditor.css?{{rlsdate}}">
+  <link rel="stylesheet" href="css/app.min.css?{{rlsdate}}">
+  <!(endif)-->
+  <!--(if target dummy)><!-->
+  <link rel="stylesheet" href="js/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/vendor/fontawesome/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="js/vendor/angular-strap/adapt-strap.min.css">-->
+  <link rel="stylesheet" href="js/vendor/angular-select/select.min.css">
+  <link rel="stylesheet" href="js/vendor/angular-ui-tree/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="js/vendor/angular-chart/angular-chart.css">
+  <link rel="stylesheet" href="css/app.css"/>
+  <!--<!(endif)-->
+</head>
+<body ng-controller="rootController">
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">&nbsp;&nbsp;Angular Seed</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li bindonce><p class="navbar-text">您好，<a ui-sref="usermgt.me"><strong>{{user.userName}}</strong></a>&nbsp;<a href="/logout.action"><span class="glyphicon glyphicon-log-out"></span> 退出</a></p></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid" lr-frame>
+  <div class="row">
+    <div class="sidebar">
+      <i class="glyphicon glyphicon-backward" style="display: none;"></i>
+      <ul class="nav nav-sidebar" left-menu>
+        <li bindonce ng-repeat="menu in menus" ng-class="{active: isCurrentMenu(menu.state), 'menu-toggle':menu.subStates.length}">
+          <i ng-if="menu.subStates.length" class="fa fa-angle-down"></i>
+          <a ui-sref="{{menu.state}}">
+            <i class="{{menu.class}}"></i>
+            <span bo-text="menu.title"></span>
+          </a>
+          <ul ng-if="menu.subStates.length" class="submenu submenu-close">
+            <li ng-repeat="item in menu.subStates" ng-class="{active: isCurrentMenu(item.state)}">
+              <a ui-sref="{{item.state}}">
+                <i class="{{item.class}}"></i>
+                <span bo-text="item.title"></span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div ui-view></div>
+    </div>
+  </div>
+</div>
+<div class="loading" ng-class="{hidden: !isLoading}"><p><i class="glyphicon glyphicon-refresh ad-spin"></i><br/>努力加载中</p></div>
+
+<!--[if lte IE 9]>
+<div id="warning_info" style="background-color:#fcf8e3;border:1px solid #fbeed5;padding:8px 35px 8px 14px;position:fixed;bottom:0;left:0;right:0;z-index:2000">
+  <button data-dismiss="alert" class="close" type="button">×</button>
+  <strong>您正在使用低版本浏览器，</strong> 在本页面的显示效果可能有差异。
+  建议您升级到 <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank">Chrome</a>
+  或以下浏览器：
+  <a href="www.mozilla.org/en-US/firefox/‎" target="_blank">Firefox</a> /
+  <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
+  <a href="http://www.opera.com/" target="_blank">Opera</a> /
+  <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">Internet Explorer 10</a>
+</div>
+<![endif]-->
+
+<!--(if target dist)>
+<script data-main="js/app.js?{{rlsdate}}" src="js/require.js"></script>
+<!(endif)-->
+<!--(if target dummy)><!-->
+<script data-main="js/main" src="js/vendor/requirejs/require.js"></script>
+<!--<!(endif)-->
+
+</body>
+</html>

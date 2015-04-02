@@ -1,0 +1,19 @@
+.flyRightFunc() {
+  0% {
+    .transform(rotate(0) translate(0, 0));
+  }
+  100% {
+    .transform(translate(600px, -100px) rotate(-15deg));
+  }
+}
+
+@-webkit-keyframes flyRight{
+  .flyRightFunc();
+}
+@keyframes flyRight{
+  .flyRightFunc();
+}
+
+.flyRight {
+  .animation-name(flyRight);
+}

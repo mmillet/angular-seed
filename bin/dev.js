@@ -62,7 +62,8 @@ for(var group in apis) {
 
 //启动服务
 var args = process.argv.splice(2);
-var port = 8888;
+var port = 8080;
+console.log(args);
 if(args.length > 1 && args[0]=='-p') {
   port = args[1]*1;
 }
