@@ -1,13 +1,12 @@
 # 基于angular的前端框架
-基础结构是
-require + angular + bootstrap
-目的是让angular的前端项目可以快速启动
+*基础结构是require + angular + bootstrap
+*目的是让angular的前端项目可以快速启动~
 
 ##开始
-npm install
-grunt run-server[:port] //默认使用8080端口
-grunt watch //监听src/partials变化动态生成templates.js
-访问 http://ip[:port]/
+*npm install
+*grunt run-server[:port] //默认使用8080端口
+*grunt watch //监听src/partials变化动态生成templates.js
+*访问http://ip[:port]/
 
 ##前端开发
 1. 增加路由（src/js/config/route.js）
@@ -20,22 +19,22 @@ grunt watch //监听src/partials变化动态生成templates.js
 2. 访问 http://127.0.0.1[:port]/~api 可看到当前项目的接口列表
 
 ##目录结构
-    
-src
- -css
- -img
- -js
-  -config   全局配置
-  -controllers   控制器
-  -directives   指令
-  -filters   过滤器
-  -services   服务
-  -vendor   框架、库和三方组件
-  main.js   项目启动入口
-  myApp.js   angular启动入口
-  templates.js   动态生成的模板文件
- -partials   存放模板
- index.html   入口页面
+
+    src
+     -css
+     -img
+     -js
+      -config   全局配置
+      -controllers   控制器
+      -directives   指令
+      -filters   过滤器
+      -services   服务
+     -vendor   框架、库和三方组件
+     main.js   项目启动入口
+     myApp.js   angular启动入口
+     templates.js   动态生成的模板文件
+    -partials   模板
+    index.html   入口页面
 
 
 ## @todo
