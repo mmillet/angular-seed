@@ -5484,10 +5484,12 @@
 }
 .sidebar .nav ul.submenu li.active a {
   color: #428bca;
+  text-decoration: none;
 }
 .sidebar .nav ul.submenu li.active a:hover {
   color: #428bca;
   background-color: #171f2a;
+  text-decoration: none;
 }
 .sidebar .nav ul.submenu li a {
   display: block;
@@ -5495,10 +5497,11 @@
   height: 30px;
   line-height: 30px;
   color: #999;
+  text-decoration: none;
 }
 .sidebar .nav ul.submenu li a:hover {
-  text-decoration: none;
   background-color: #171f2a;
+  text-decoration: none;
 }
 .sidebar .nav ul.submenu li a .glyphicon,
 .sidebar .nav ul.submenu li a .fa {
@@ -5532,6 +5535,7 @@
 .sidebar .nav-sidebar > .active > a:focus {
   color: #428bca;
   background-color: #171f2a;
+  text-decoration: none;
 }
 .main {
   padding: 20px;
@@ -5689,6 +5693,10 @@ body {
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
 }
 /*
  * Placeholder dashboard ideas
