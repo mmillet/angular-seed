@@ -1276,7 +1276,7 @@ function encodeUriQuery(val, pctEncodeSpaces) {
  *
  * You can specify an **AngularJS module** to be used as the root module for the application.  This
  * module will be loaded into the {@link auto.$injector} when the application is bootstrapped and
- * should contain the application code needed or have dependencies on other modules that will
+ * should contain the application code needed or have dependencies on other components that will
  * contain the code. See {@link angular.module} for more information.
  *
  * In the example below if the `ngApp` directive were not placed on the `html` element then the
@@ -1392,10 +1392,10 @@ function angularInit(element, bootstrap) {
  * </example>
  *
  * @param {DOMElement} element DOM element which is the root of angular application.
- * @param {Array<String|Function|Array>=} modules an array of modules to load into the application.
+ * @param {Array<String|Function|Array>=} modules an array of components to load into the application.
  *     Each item in the array should be the name of a predefined module or a (DI annotated)
  *     function that will be invoked by the injector as a run block.
- *     See: {@link angular.module modules}
+ *     See: {@link angular.module components}
  * @returns {auto.$injector} Returns the newly created injector for this app.
  */
 function bootstrap(element, modules) {
@@ -1560,7 +1560,7 @@ function getBlockElements(nodes) {
  * @module ng
  * @description
  *
- * Interface for configuring angular {@link angular.module modules}.
+ * Interface for configuring angular {@link angular.module components}.
  */
 
 function setupModuleLoader(window) {
@@ -1574,7 +1574,7 @@ function setupModuleLoader(window) {
 
   var angular = ensure(window, 'angular', Object);
 
-  // We need to expose `angular.$$minErr` to modules such as `ngResource` that reference it during bootstrap
+  // We need to expose `angular.$$minErr` to components such as `ngResource` that reference it during bootstrap
   angular.$$minErr = angular.$$minErr || minErr;
 
   return ensure(angular, 'module', function() {
@@ -1588,8 +1588,8 @@ function setupModuleLoader(window) {
      * @description
      *
      * The `angular.module` is a global place for creating, registering and retrieving Angular
-     * modules.
-     * All modules (angular core or 3rd party) that should be available to an application must be
+     * components.
+     * All components (angular core or 3rd party) that should be available to an application must be
      * registered using this mechanism.
      *
      * When passed two or more arguments, a new module is created.  If passed only one argument, an
@@ -1615,7 +1615,7 @@ function setupModuleLoader(window) {
      * }]);
      * ```
      *
-     * Then you can create an injector and load your modules like this:
+     * Then you can create an injector and load your components like this:
      *
      * ```js
      * var injector = angular.injector(['ng', 'myModule'])
@@ -1670,7 +1670,7 @@ function setupModuleLoader(window) {
            * @module ng
            * @returns {Array.<string>} List of module names which must be loaded before this module.
            * @description
-           * Holds the list of modules which the injector will load before the current module is
+           * Holds the list of components which the injector will load before the current module is
            * loaded.
            */
           requires: requires,
@@ -1833,7 +1833,7 @@ function setupModuleLoader(window) {
            *    Useful for application initialization.
            * @description
            * Use this method to register work which should be performed when the injector is done
-           * loading all modules.
+           * loading all components.
            */
           run: function(block) {
             runBlocks.push(block);
@@ -3253,7 +3253,7 @@ function annotate(fn) {
  *
  * `$injector` is used to retrieve object instances as defined by
  * {@link auto.$provide provider}, instantiate types, invoke methods,
- * and load modules.
+ * and load components.
  *
  * The following always holds true:
  *

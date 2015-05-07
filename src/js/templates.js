@@ -1,4 +1,4 @@
-angular.module('templates-main', ['partials/component/forbidden.html', 'partials/component/pageNormal.html', 'partials/component/subMenu.html', 'partials/component/tips.html', 'partials/home/index.html', 'partials/home/modal.html']);
+angular.module('templates-main', ['partials/component/forbidden.html', 'partials/component/pageNormal.html', 'partials/component/subMenu.html', 'partials/component/tips.html', 'partials/home/index.html', 'partials/home/modal.html', 'partials/manager/index.html', 'partials/manager/priv.html', 'partials/manager/task.html', 'partials/manager/user.html', 'partials/stat/index.html', 'partials/system/index.html']);
 
 angular.module("partials/component/forbidden.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("partials/component/forbidden.html",
@@ -47,7 +47,7 @@ angular.module("partials/component/tips.html", []).run(["$templateCache", functi
 
 angular.module("partials/home/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("partials/home/index.html",
-    "<h1 class=\"content-title\">首页</h1>\n" +
+    "<h1 class=\"page-title\">首页</h1>\n" +
     "<div class=\"row\">\n" +
     "  <div class=\"col-lg-12\">\n" +
     "    <p>下面是一些基本组件的用法，这里获取更多你想要的：<a href=\"http://angular-ui.github.io/\" target=\"_blank\">http://angular-ui.github.io/</a></p>\n" +
@@ -142,19 +142,19 @@ angular.module("partials/home/index.html", []).run(["$templateCache", function($
     "                <span class=\"fa fa-files-o text-warning\"></span>\n" +
     "            </button>\n" +
     "            <button type=\"button\" class=\"btn btn-xs btn-default\" title=\"添加\">\n" +
-    "              <span class=\"glyphicon text-primary glyphicon-plus\"></span>\n" +
+    "              <span class=\"fa text-primary fa-plus\"></span>\n" +
     "            </button>\n" +
     "            <button type=\"button\" class=\"btn btn-xs btn-default\" title=\"重命名\">\n" +
-    "              <span class=\"glyphicon text-primary glyphicon-edit\"></span>\n" +
+    "              <span class=\"fa text-primary fa-edit\"></span>\n" +
     "            </button>\n" +
     "            <button type=\"button\" class=\"btn btn-xs btn-default dropdown-toggle\">\n" +
     "              <span class=\"caret\"></span>\n" +
     "            </button>\n" +
     "            <ul class=\"dropdown-menu\" role=\"menu\">\n" +
-    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"glyphicon glyphicon-remove text-danger\"></span> 删除</a></li>\n" +
+    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"fa fa-remove text-danger\"></span> 删除</a></li>\n" +
     "              <li class=\"divider\"></li>\n" +
-    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"glyphicon text-primary glyphicon-arrow-up\"></span> 上移</a></li>\n" +
-    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"glyphicon text-primary glyphicon-arrow-down\"></span> 下移</a></li>\n" +
+    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"fa text-primary fa-arrow-up\"></span> 上移</a></li>\n" +
+    "              <li><a class=\"btn btn-link btn-xs\"><span class=\"fa text-primary fa-arrow-down\"></span> 下移</a></li>\n" +
     "            </ul>\n" +
     "          </div>\n" +
     "        </td>\n" +
@@ -213,16 +213,16 @@ angular.module("partials/home/index.html", []).run(["$templateCache", function($
     "        <td>图表：</td>\n" +
     "        <td>\n" +
     "          <div class=\"row\">\n" +
-    "            <div class=\"col-md-4\">\n" +
-    "              <canvas class=\"chart chart-line\" data=\"data.chart1\" labels=\"data.labels\"\n" +
-    "                      legend=\"true\" series=\"data.series\" click=\"onClick\"></canvas>\n" +
-    "            </div>\n" +
-    "            <div class=\"col-md-4\">\n" +
-    "              <canvas legend=\"true\" class=\"chart chart-pie\" data=\"data.pieData\" labels=\"data.pieLabels\"></canvas>\n" +
-    "            </div>\n" +
-    "            <div class=\"col-md-4\">\n" +
-    "              <canvas id=\"area\" class=\"chart chart-radar\" data=\"data.radarData\" labels=\"data.radarLabels\"></canvas>\n" +
-    "            </div>\n" +
+    "            <!--<div class=\"col-md-4\">-->\n" +
+    "              <!--<canvas class=\"chart chart-line\" data=\"data.chart1\" labels=\"data.labels\"-->\n" +
+    "                      <!--legend=\"true\" series=\"data.series\" click=\"onClick\"></canvas>-->\n" +
+    "            <!--</div>-->\n" +
+    "            <!--<div class=\"col-md-4\">-->\n" +
+    "              <!--<canvas legend=\"true\" class=\"chart chart-pie\" data=\"data.pieData\" labels=\"data.pieLabels\"></canvas>-->\n" +
+    "            <!--</div>-->\n" +
+    "            <!--<div class=\"col-md-4\">-->\n" +
+    "              <!--<canvas id=\"area\" class=\"chart chart-radar\" data=\"data.radarData\" labels=\"data.radarLabels\"></canvas>-->\n" +
+    "            <!--</div>-->\n" +
     "\n" +
     "          </div>\n" +
     "\n" +
@@ -245,7 +245,7 @@ angular.module("partials/home/index.html", []).run(["$templateCache", function($
     "              <td>{{item.name}}</td>\n" +
     "              <td>{{item.email}}</td>\n" +
     "              <td>\n" +
-    "                <button type=\"button\" class=\"btn btn-link btn-xs pull-left\" title=\"编辑\"><i class=\"glyphicon glyphicon-edit\"></i> 编辑</button>\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-xs pull-left\" title=\"编辑\"><i class=\"fa fa-edit\"></i> 编辑</button>\n" +
     "                <button type=\"button\" class=\"btn btn-link btn-xs pull-left\" title=\"查看\"><i class=\"fa fa-eye\"></i> 查看</button>\n" +
     "              </td>\n" +
     "            </tr>\n" +
@@ -295,4 +295,34 @@ angular.module("partials/home/modal.html", []).run(["$templateCache", function($
     "  <button class=\"btn btn-primary\" ng-click=\"ok()\">确定</button>\n" +
     "  <button class=\"btn btn-default\" ng-click=\"cancel()\">取消</button>\n" +
     "</div>");
+}]);
+
+angular.module("partials/manager/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/manager/index.html",
+    "<h1 class=\"page-title\">管理</h1>");
+}]);
+
+angular.module("partials/manager/priv.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/manager/priv.html",
+    "<h1 class=\"page-title\">权限管理</h1>");
+}]);
+
+angular.module("partials/manager/task.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/manager/task.html",
+    "<h1 class=\"page-title\">任务管理</h1>");
+}]);
+
+angular.module("partials/manager/user.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/manager/user.html",
+    "<h1 class=\"page-title\">用户管理</h1>");
+}]);
+
+angular.module("partials/stat/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/stat/index.html",
+    "<h1 class=\"page-title\">数据统计</h1>");
+}]);
+
+angular.module("partials/system/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("partials/system/index.html",
+    "<h1 class=\"page-title\">我的系统</h1>");
 }]);

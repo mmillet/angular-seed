@@ -1,0 +1,145 @@
+/*!
+ * Animate LESS v1.0
+ * Copyright 2012 Joshua Pekera
+ * Author: @joshuapekera
+ */
+
+// !Keyframe Animations
+// for CSS3 browsers, phones and tablet devices
+// -------------------------------------------------------------
+
+// Animation Mixins
+@import "variables";
+@import "mixins";
+
+// !Animated Timer Class
+//body {-webkit-backface-visibility: hidden;} //fixes antialising issues with text during an animation
+.animated {
+	.animation-duration(1s);
+	.animation-fill-mode(both);
+}
+
+.animated-fast {
+	.animation-duration(.5s);
+	.animation-fill-mode(both);
+}
+
+.animated-zing {
+	.animation-duration(.3s);
+	.animation-fill-mode(both);
+}
+
+// !Animate Classes
+// ------------------
+// !Attention seekers
+@import "keyframes/flash";
+@import "keyframes/shake";
+@import "keyframes/bounce";
+@import "keyframes/tada";
+@import "keyframes/swing";
+@import "keyframes/wobble";
+@import "keyframes/wiggle";
+@import "keyframes/pulse";
+
+// !Flippers 
+// (currently Webkit, Firefox, &amp; IE10 only):
+@import "keyframes/flip";
+@import "keyframes/flipInX";
+@import "keyframes/flipOutX";
+@import "keyframes/flipInY";
+@import "keyframes/flipOutY";
+
+// !Fading entrances
+@import "keyframes/fadeIn";
+@import "keyframes/fadeInUp";
+@import "keyframes/fadeInDown";
+@import "keyframes/fadeInLeft";
+@import "keyframes/fadeInRight";
+@import "keyframes/fadeInUpBig";
+@import "keyframes/fadeInDownBig";
+@import "keyframes/fadeInLeftBig";
+@import "keyframes/fadeInRightBig";
+
+// !Fading exits
+@import "keyframes/fadeOut";
+@import "keyframes/fadeOutUp";
+@import "keyframes/fadeOutDown";
+@import "keyframes/fadeOutLeft";
+@import "keyframes/fadeOutRight";
+@import "keyframes/fadeOutUpBig";
+@import "keyframes/fadeOutDownBig";
+@import "keyframes/fadeOutLeftBig";
+@import "keyframes/fadeOutRightBig";
+
+// !Bouncing entrances
+@import "keyframes/bounce";
+@import "keyframes/bounceIn";
+@import "keyframes/bounceInUp";
+@import "keyframes/bounceInDown";
+@import "keyframes/bounceInLeft";
+@import "keyframes/bounceInRight";
+@import "keyframes/easeInLeft";
+@import "keyframes/easeOutLeft";
+@import "keyframes/easeInRight";
+@import "keyframes/easeOutRight";
+
+// !Bouncing exits
+@import "keyframes/bounceOut";
+@import "keyframes/bounceOutUp";
+@import "keyframes/bounceOutDown";
+@import "keyframes/bounceOutLeft";
+@import "keyframes/bounceOutRight";
+
+// !Scaling entrances
+@import "keyframes/scaleIn";
+@import "keyframes/scaleInBig";
+
+// !Scaling exits
+@import "keyframes/scaleOut";
+@import "keyframes/scaleOutBig";
+
+// !Rotating entrances
+@import "keyframes/rotateIn";
+@import "keyframes/rotateInUpLeft";
+@import "keyframes/rotateInUpRight";
+@import "keyframes/rotateInDownLeft";
+@import "keyframes/rotateInDownRight";
+
+// !Rotating exits
+@import "keyframes/rotateOut";
+@import "keyframes/rotateOutUpLeft";
+@import "keyframes/rotateOutUpRight";
+@import "keyframes/rotateOutDownLeft";
+@import "keyframes/rotateOutDownRight";
+
+// !Lightspeed
+@import "keyframes/lightSpeedIn";
+@import "keyframes/lightSpeedOut";
+
+// !Specials
+@import "keyframes/hingeLeft";
+@import "keyframes/hingeRight";
+@import "keyframes/rollIn";
+@import "keyframes/rollOut";
+
+// !Beta Keyframes
+@import "keyframes/dropUp";
+@import "keyframes/dropDown";
+
+// My Keyframes
+@import "myKeyframes/stretchInRight";
+@import "myKeyframes/fly";
+
+// !Pop entrances
+@import "keyframes/popIn.less";
+//@import "keyframes/popInBig.less";
+
+// !Pop exits
+//@import "keyframes/popOut.less";
+//@import "keyframes/popOutBig.less";
+
+// !Custom Animate Classes
+// -------------------------
+// Add any custom animation delay, duration, count, etc
+@import "animation";
+

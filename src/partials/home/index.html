@@ -1,4 +1,4 @@
-<h1 class="content-title">首页</h1>
+<h1 class="page-title">首页</h1>
 <div class="row">
   <div class="col-lg-12">
     <p>下面是一些基本组件的用法，这里获取更多你想要的：<a href="http://angular-ui.github.io/" target="_blank">http://angular-ui.github.io/</a></p>
@@ -93,19 +93,19 @@
                 <span class="fa fa-files-o text-warning"></span>
             </button>
             <button type="button" class="btn btn-xs btn-default" title="添加">
-              <span class="glyphicon text-primary glyphicon-plus"></span>
+              <span class="fa text-primary fa-plus"></span>
             </button>
             <button type="button" class="btn btn-xs btn-default" title="重命名">
-              <span class="glyphicon text-primary glyphicon-edit"></span>
+              <span class="fa text-primary fa-edit"></span>
             </button>
             <button type="button" class="btn btn-xs btn-default dropdown-toggle">
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a class="btn btn-link btn-xs"><span class="glyphicon glyphicon-remove text-danger"></span> 删除</a></li>
+              <li><a class="btn btn-link btn-xs"><span class="fa fa-remove text-danger"></span> 删除</a></li>
               <li class="divider"></li>
-              <li><a class="btn btn-link btn-xs"><span class="glyphicon text-primary glyphicon-arrow-up"></span> 上移</a></li>
-              <li><a class="btn btn-link btn-xs"><span class="glyphicon text-primary glyphicon-arrow-down"></span> 下移</a></li>
+              <li><a class="btn btn-link btn-xs"><span class="fa text-primary fa-arrow-up"></span> 上移</a></li>
+              <li><a class="btn btn-link btn-xs"><span class="fa text-primary fa-arrow-down"></span> 下移</a></li>
             </ul>
           </div>
         </td>
@@ -164,16 +164,16 @@
         <td>图表：</td>
         <td>
           <div class="row">
-            <div class="col-md-4">
-              <canvas class="chart chart-line" data="data.chart1" labels="data.labels"
-                      legend="true" series="data.series" click="onClick"></canvas>
-            </div>
-            <div class="col-md-4">
-              <canvas legend="true" class="chart chart-pie" data="data.pieData" labels="data.pieLabels"></canvas>
-            </div>
-            <div class="col-md-4">
-              <canvas id="area" class="chart chart-radar" data="data.radarData" labels="data.radarLabels"></canvas>
-            </div>
+            <!--<div class="col-md-4">-->
+              <!--<canvas class="chart chart-line" data="data.chart1" labels="data.labels"-->
+                      <!--legend="true" series="data.series" click="onClick"></canvas>-->
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+              <!--<canvas legend="true" class="chart chart-pie" data="data.pieData" labels="data.pieLabels"></canvas>-->
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+              <!--<canvas id="area" class="chart chart-radar" data="data.radarData" labels="data.radarLabels"></canvas>-->
+            <!--</div>-->
 
           </div>
 
@@ -196,7 +196,7 @@
               <td>{{item.name}}</td>
               <td>{{item.email}}</td>
               <td>
-                <button type="button" class="btn btn-link btn-xs pull-left" title="编辑"><i class="glyphicon glyphicon-edit"></i> 编辑</button>
+                <button type="button" class="btn btn-link btn-xs pull-left" title="编辑"><i class="fa fa-edit"></i> 编辑</button>
                 <button type="button" class="btn btn-link btn-xs pull-left" title="查看"><i class="fa fa-eye"></i> 查看</button>
               </td>
             </tr>

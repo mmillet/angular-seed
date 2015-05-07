@@ -14,19 +14,19 @@ define([
   'angular-bindonce',
   'angular-ui-router',
   'angular-ui-bootstrap',
-  'angular-file-upload',
+//  'angular-file-upload',
   'angular-template-main',
-  'angular-strap',
-  'angular-strap-tpl',
+//  'angular-strap',
+//  'angular-strap-tpl',
   'angular-select',
-  'angular-ui-tree',
+//  'angular-ui-tree',
   'angular-ui-utils',
   'angular-ui-date',
   'angular-smarty',
   'angular-smarty-config',
-  'angular-chart',
+//  'angular-chart',
 
-  //加载各个控制器，服务，过滤器，指令
+  //加载各个控制器，过滤器，指令
   'controllers/rootController',
   'controllers/homeController',
   'controllers/managerController',
@@ -37,26 +37,34 @@ define([
 
   //加载指令
   'directives/utilsDirective',
-  'directives/lrFrameDirective',
+  'directives/lrFrameDirective'
 
 ], function (config, angular) {
-  return angular.module('webapp', ['controllers', 'services', 'filters', 'directives',
-    'ui.select', 'ui.tree', 'pasvaz.bindonce', 'ui.utils', 'ui.date',
-    'angular-smarty', 'chart.js',
-    'ngSanitize', 'ui.router', 'ui.bootstrap', 'adaptv.adaptStrap', 'angularFileUpload', 'templates-main'])
-    .config(['$provide', function ($provide) {
-      //装饰$log.debug
-      $provide.decorator('$log', ['$delegate', function ($delegate) {
-        var origDebug = $delegate.debug;
-        $delegate.debug = function () {
-          var args = [].slice.call(arguments);
-          args[0] = [new Date().toString(), ': ', args[0]].join('');
-          origDebug.apply(null, args);
-        };
-        return $delegate;
-      }]);
-    }])
-    .config(function($stateProvider, $urlRouterProvider) {
+  return angular.module('carrier-app-setup', [
+    'controllers', 'services', 'filters', 'directives'
+    ,'ui.select'
+    //,'ui.tree'
+    ,'pasvaz.bindonce', 'ui.utils', 'ui.date'
+    ,'angular-smarty'
+    //,'chart.js'
+    ,'ngSanitize', 'ui.router', 'ui.bootstrap'
+    //,'adaptv.adaptStrap', 'angularFileUpload'
+    ,'templates-main'
+  ])
+//    .config(['$provide', function ($provide) {
+//      //装饰$log.debug
+//      $provide.decorator('$log', ['$delegate', function ($delegate) {
+//        var origDebug = $delegate.debug;
+//        $delegate.debug = function () {
+//          var args = [].slice.call(arguments);
+//          args[0] = [new Date().toString(), ': ', args[0]].join('');
+//          origDebug.apply(null, args);
+//        };
+//        return $delegate;
+//      }]);
+//    }])
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+        function($stateProvider, $urlRouterProvider, $locationProvider) {
       //解析路由
       $urlRouterProvider.otherwise(config.route.menus[0].state);
       $stateProvider
@@ -78,8 +86,10 @@ define([
           }
         });
       }(config.route.menus));
-    })
-    .run(function($state, $timeout) {
+      // use the HTML5 History API
+      //$locationProvider.html5Mode(true);
+    }])
+    .run([function() {
       //do sth once
-    })
+    }])
 });

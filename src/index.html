@@ -5,19 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angular Seed</title>
-  <!--(if target dist)>
-  <link rel="stylesheet" href="js/vendor/umeditor/themes/default/css/umeditor.css?{{rlsdate}}">
-  <link rel="stylesheet" href="css/app.min.css?{{rlsdate}}">
+  <!--(if target main)>
+  <link rel="stylesheet" href="css/all.min.css?{{rlsdate}}">
   <!(endif)-->
   <!--(if target dummy)><!-->
-  <link rel="stylesheet" href="js/vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="js/vendor/fontawesome/css/font-awesome.min.css">
-  <!--<link rel="stylesheet" href="js/vendor/angular-strap/adapt-strap.min.css">-->
+  <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="css/lib/bootstrap/theme.css">
+  <link rel="stylesheet" href="css/lib/fontawesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="js/vendor/angular-select/select.min.css">
   <link rel="stylesheet" href="js/vendor/angular-ui-tree/angular-ui-tree.min.css">
   <link rel="stylesheet" href="js/vendor/angular-chart/angular-chart.css">
   <link rel="stylesheet" href="css/app.css"/>
   <!--<!(endif)-->
+  <!--[if lt IE 9]>
+  <script src="iejs/html5shiv.js"></script>
+  <script src="iejs/respond.js"></script>
+  <script src="iejs/json2.js"></script>
+  <script src="iejs/es5-shim.min.js"></script>
+  <script>
+    document.createElement('ng-include');
+    document.createElement('ng-pluralize');
+    document.createElement('ng-view');
+    document.createElement('data-ng-view');
+    document.createElement('ui-select');
+    document.createElement('ui-select-match');
+    document.createElement('ui-select-choices');
+
+    // Optionally these for CSS
+    document.createElement('ng:include');
+    document.createElement('ng:pluralize');
+    document.createElement('ng:view');
+  </script>
+  <![endif]-->
 </head>
 <body ng-controller="rootController">
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top navbar-inverse">
@@ -28,11 +47,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">&nbsp;&nbsp;Angular Seed</a>
+      <a href="/" class="navbar-brand">Angular Seed</a>
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li bindonce><p class="navbar-text">您好，<a ui-sref="usermgt.me"><strong>{{user.userName}}</strong></a>&nbsp;<a href="/logout.action"><span class="glyphicon glyphicon-log-out"></span> 退出</a></p></li>
+        <li bindonce><p class="navbar-text">您好，<a ui-sref="usermgt.me"><strong bo-text="user.userName"></strong></a>&nbsp;<a href="/logout.action"><span class="fa fa-sign-out"></span> 退出</a></p></li>
       </ul>
     </div>
   </div>
@@ -40,18 +59,18 @@
 <div class="container-fluid" lr-frame>
   <div class="row">
     <div class="sidebar">
-      <i class="glyphicon glyphicon-backward" style="display: none;"></i>
+      <i class="fa fa-backward" style="display: none;"></i>
       <ul class="nav nav-sidebar" left-menu>
         <li bindonce ng-repeat="menu in menus" ng-class="{active: isCurrentMenu(menu.state), 'menu-toggle':menu.subStates.length}">
           <i ng-if="menu.subStates.length" class="fa fa-angle-down"></i>
           <a ui-sref="{{menu.state}}">
-            <i class="{{menu.class}}"></i>
+            <i class="{{menu.css}}"></i>
             <span bo-text="menu.title"></span>
           </a>
           <ul ng-if="menu.subStates.length" class="submenu submenu-close">
             <li ng-repeat="item in menu.subStates" ng-class="{active: isCurrentMenu(item.state)}">
               <a ui-sref="{{item.state}}">
-                <i class="{{item.class}}"></i>
+                <i class="{{item.css}}"></i>
                 <span bo-text="item.title"></span>
               </a>
             </li>
@@ -64,7 +83,7 @@
     </div>
   </div>
 </div>
-<div class="loading" ng-class="{hidden: !isLoading}"><p><i class="glyphicon glyphicon-refresh ad-spin"></i><br/>努力加载中</p></div>
+<div class="page-loading" ng-class="{hidden: !isLoading}"><p><i class="fa fa-spinner fa-spin"></i><br/>努力加载中</p></div>
 
 <!--[if lte IE 9]>
 <div id="warning_info" style="background-color:#fcf8e3;border:1px solid #fbeed5;padding:8px 35px 8px 14px;position:fixed;bottom:0;left:0;right:0;z-index:2000">
@@ -79,7 +98,7 @@
 </div>
 <![endif]-->
 
-<!--(if target dist)>
+<!--(if target main)>
 <script data-main="js/app.js?{{rlsdate}}" src="js/require.js"></script>
 <!(endif)-->
 <!--(if target dummy)><!-->

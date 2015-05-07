@@ -7,6 +7,87 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    requirejs: {
+      main: {
+        options: {
+          name: "main",
+          baseUrl: "src/js",
+          mainConfigFile: "src/js/main.js",
+          out: "dist/js/app.js",
+          useStrict: false,
+          //wrapShim: true,
+          optimize: "uglify2",
+          preserveLicenseComments: false
+        }
+      }
+    },
+
+    targethtml: {
+      main: {
+        options: {
+          curlyTags: {
+            rlsdate: '<%= grunt.template.today("yyyymmdd") %>'
+          }
+        },
+        files: {
+          'dist/index.html': 'src/index.html'
+        }
+      }
+    },
+
+
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            cwd: 'src/css/lib/fontawesome/fonts/',
+            src: '**',
+            dest: 'dist/fonts/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: 'src/iejs/',
+            src: '**',
+            dest: 'dist/iejs/'
+          },
+          {
+            src: 'src/js/vendor/requirejs/require.js',
+            dest: 'dist/js/require.js'
+          },
+          {
+            src: 'src/favicon.ico',
+            dest: 'dist/favicon.ico'
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: 'src/img/',
+            src: '**',
+            dest: 'dist/img/'
+          }
+        ]
+      }
+    },
+
+    cssmin: {
+      main: {
+        files: {
+          'dist/css/all.min.css': [
+            "src/css/lib/bootstrap/bootstrap.css",
+            "src/css/lib/bootstrap/theme.css",
+            "src/css/lib/fontawesome/css/font-awesome.min.css",
+            "src/js/vendor/angular-select/select.min.css",
+            "src/js/vendor/angular-ui-tree/angular-ui-tree.min.css",
+            "src/js/vendor/angular-chart/angular-chart.css",
+            "src/css/app.css"
+          ]
+        }
+      }
+    },
+
     html2js: {
       main: {
         src: ['src/partials/**/*.html'],
@@ -16,9 +97,21 @@ module.exports = function(grunt) {
 
     //自动做html转js，开发时需要执行
     watch: {
-      scripts: {
+      main: {
         files: 'src/partials/**/*.html',
         tasks: ['html2js']
+      }
+    },
+
+    uglify: {
+      main: {
+        options: {
+          banner: '/*!<%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
+        },
+        build: {
+          src: 'dist/js/app.js',
+          dest: 'dist/js/app.js'
+        }
       }
     }
   });
@@ -37,5 +130,7 @@ module.exports = function(grunt) {
     console.log(port);
     sh.run("supervisor -w bin\\. -e js,json,html -- bin\\dev.js -p " + port);
   });
+
+  grunt.registerTask('default', ['html2js:main', 'requirejs:main', 'cssmin:main', 'copy:main', 'targethtml:main']);
 };
 

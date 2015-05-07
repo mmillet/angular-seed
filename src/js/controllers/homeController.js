@@ -5,7 +5,6 @@ define(['config/config', 'controllers/controllers', 'services/homeService', 'ser
     controllers.controller('homeController', ['$log', '$scope', '$rootScope', '$timeout', '$modal', 'homeService', 'ajaxService',
       function($log, $scope, $rootScope, $timeout, $modal, homeService, ajaxService) {
         $log.info("homeController");
-
         //记住models都要有.
         $scope.data = {};
         $scope.tmp = {};
@@ -43,7 +42,7 @@ define(['config/config', 'controllers/controllers', 'services/homeService', 'ser
             backdrop: !hardToClose,
             keyboard: !hardToClose,
             windowClass: hardToClose?"modal-bg":"",
-            controller: function($scope, $modalInstance) {
+            controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
               $scope.data = {'Hello': 'Baymax'};
               $scope.ok = function() {
                 $log.info("点击确定了");
@@ -52,7 +51,7 @@ define(['config/config', 'controllers/controllers', 'services/homeService', 'ser
               $scope.cancel = function() {
                 $modalInstance.close();
               };
-            }
+            }]
           });
         };
 

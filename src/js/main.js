@@ -62,7 +62,7 @@ require([
   'chart-js'
 ], function($, angular, app) {
   //启动angular
-  $(function(){
+  angular.element(document).ready(function() {
     angular.bootstrap(document, [app.name]);
   });
 });

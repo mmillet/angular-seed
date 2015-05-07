@@ -65,9 +65,9 @@ define(["config/config", 'controllers/controllers'],
         //消息提示控制
         var _hideMesTimeout = null;
         $rootScope.showMes = function(message) {
-          var $message = $(".window-message");
+          var $message = $(".page-message");
           if(!$message.length) {
-            $message = $('<p class="window-message animated fadeIn" style="display: none;">'+message+'</p>');
+            $message = $('<p class="page-message animated fadeIn" style="display: none;">'+message+'</p>');
             $(document.body).append($message);
           } else {
             $message.html(message);
@@ -89,7 +89,7 @@ define(["config/config", 'controllers/controllers'],
           var modalInstance = $modal.open({
             templateUrl: 'partials/component/tips.html',
             size: type=="prompt"?"":"sm",
-            controller: function($scope, $modalInstance) {
+            controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
               $scope.data = {type:type};
               if(type=='error') {
                 //错误窗口只报一个
@@ -130,7 +130,7 @@ define(["config/config", 'controllers/controllers'],
                 deferred.reject();
                 $modalInstance.dismiss('cancel');
               };
-            }
+            }]
           });
           return deferred;
         };
